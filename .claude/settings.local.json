@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:cs.uwaterloo.ca)"
+      "WebFetch(domain:cs.uwaterloo.ca)",
+      "Bash(mv:*)",
+      "Bash(uv run:*)",
+      "Bash(PYTEST_SKIP_FLAMENCO=true uv run pytest test_bpm_detector.py -v)"
     ],
     "deny": []
   }

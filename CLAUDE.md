@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Streamlit web application called "bpm-app" for detecting BPM (Beats Per Minute) from MP3 audio files.
+This is a Streamlit web application called "bpm-app" for detecting BPM (Beats Per Minute) from MP3 audio files using both librosa and custom from-scratch algorithms.
 
 ## Development Commands
 
@@ -25,19 +25,25 @@ uv run pytest test_bpm_detector.py -v
 
 ### Python Environment
 - Requires Python >=3.13
-- Dependencies: streamlit, librosa, numpy, soundfile
+- Dependencies: streamlit, librosa, numpy, soundfile, scipy, pytest
 - Always use `uv` for package management and for running things (uv run...)
 
 ## Architecture
 
 The project is a Streamlit web application for BPM detection:
-- `app.py` - Main Streamlit application with file upload and BPM detection
-- `main.py` - Original entry point (legacy)
-- `pyproject.toml` - Python project configuration with audio processing dependencies
+- `app.py` - Main Streamlit application with algorithm selection and file upload
+- `bpm_detector.py` - Core BPM detection algorithms (both librosa and custom)
+- `test_bpm_detector.py` - Unit tests with CI integration
+- `test_comparison.py` - Algorithm comparison testing
+- `pyproject.toml` - Python project configuration
+- `.github/workflows/test.yml` - CI/CD pipeline
 
 ## Key Features
 
+- **Two BPM Detection Algorithms:**
+  - Librosa (out-of-box): Industry standard beat tracking
+  - Custom (from scratch): Pure numpy/scipy implementation
+- Algorithm comparison mode
 - MP3 file upload via Streamlit interface
-- BPM detection using librosa's beat tracking algorithms
 - Genre classification based on BPM ranges
-- Temporary file handling for audio processing
+- Unit testing with ±5 BPM tolerance validation

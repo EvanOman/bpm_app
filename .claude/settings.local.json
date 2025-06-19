@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cs.uwaterloo.ca)"
+    ],
+    "deny": []
+  }
+}

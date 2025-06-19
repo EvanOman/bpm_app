@@ -1,0 +1,13 @@
+[project]
+name = "bpm-app"
+version = "0.1.0"
+description = "Streamlit app for BPM detection from MP3 files"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "streamlit>=1.28.0",
+    "librosa>=0.10.0",
+    "numpy>=1.24.0",
+    "soundfile>=0.12.0",
+    "pytest>=7.0.0"
+]
